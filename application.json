@@ -1,0 +1,18 @@
+{
+  "appIsExample": false,
+  "unpublishedApplicationDetail": {
+    "appPositioning": {
+      "type": "FIXED"
+    },
+    "navigationSetting": {
+      "showNavbar": true
+    }
+  },
+  "color": "#3366FF",
+  "icon": "chat",
+  "name": "Simple AI Chat",
+  "slug": "simple-ai-chat",
+  "unpublishedAppLayout": {
+    "type": "DESKTOP"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "Page1_openai",
+  "pluginId": "Open AI",
+  "pluginType": "AI",
+  "unpublishedAction": {
+    "name": "openai",
+    "datasource": {
+      "id": "OPENAI",
+      "name": "OPENAI",
+      "pluginId": "Open AI"
+    },
+    "pageId": "Page1",
+    "actionConfiguration": {
+      "timeoutInMillisecond": 30000,
+      "paginationType": "NONE",
+      "encodeParamsToggle": true,
+      "formData": {
+        "command": {
+          "data": "CHAT"
+        },
+        "chatModel": {
+          "data": "gpt-4o-mini"
+        },
+        "messages": {
+          "data": "[{\"role\": \"system\", \"content\": \"Du bist ein hilfreicher Assistent.\"}, {\"role\": \"user\", \"content\": {{UserInput.text}}}]"
+        },
+        "maxTokens": "500",
+        "temperature": "0.7"
+      }
+    },
+    "executeOnLoad": false,
+    "dynamicBindingPathList": [
+      {
+        "key": "formData.messages.data"
+      }
+    ]
+  }
+}

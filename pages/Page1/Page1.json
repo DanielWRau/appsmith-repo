@@ -1,0 +1,112 @@
+{
+  "unpublishedPage": {
+    "name": "Page1",
+    "slug": "page1",
+    "layouts": [
+      {
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "#F8F9FA",
+          "rightColumn": 4896,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1000,
+          "containerStyle": "none",
+          "snapRows": 124,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 94,
+          "minHeight": 1292,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "children": [
+            {
+              "widgetName": "Container1",
+              "type": "CONTAINER_WIDGET",
+              "leftColumn": 8,
+              "rightColumn": 56,
+              "topRow": 10,
+              "bottomRow": 65,
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": "0.5rem",
+              "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+              "widgetId": "container1",
+              "children": [
+                {
+                  "widgetName": "Title",
+                  "type": "TEXT_WIDGET",
+                  "text": "🤖 AI Assistant",
+                  "fontSize": "2rem",
+                  "fontStyle": "BOLD",
+                  "textAlign": "CENTER",
+                  "textColor": "#2D3748",
+                  "leftColumn": 0,
+                  "rightColumn": 48,
+                  "topRow": 2,
+                  "bottomRow": 7,
+                  "widgetId": "title"
+                },
+                {
+                  "widgetName": "UserInput",
+                  "type": "INPUT_WIDGET",
+                  "label": "Ihre Frage",
+                  "inputType": "TEXT",
+                  "defaultText": "",
+                  "placeholderText": "Was möchten Sie wissen?",
+                  "isRequired": false,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "leftColumn": 0,
+                  "rightColumn": 48,
+                  "topRow": 10,
+                  "bottomRow": 17,
+                  "widgetId": "user_input"
+                },
+                {
+                  "widgetName": "SendButton",
+                  "type": "BUTTON_WIDGET",
+                  "text": "Senden",
+                  "buttonStyle": "PRIMARY",
+                  "isDisabled": "{{!UserInput.text || UserInput.text.trim() === ''}}",
+                  "isVisible": true,
+                  "onClick": "{{ChatManager.sendMessage()}}",
+                  "leftColumn": 18,
+                  "rightColumn": 30,
+                  "topRow": 20,
+                  "bottomRow": 26,
+                  "widgetId": "send_button",
+                  "dynamicBindingPathList": [
+                    {"key": "isDisabled"}
+                  ],
+                  "dynamicTriggerPathList": [
+                    {"key": "onClick"}
+                  ]
+                },
+                {
+                  "widgetName": "ResponseText",
+                  "type": "TEXT_WIDGET",
+                  "text": "{{appsmith.store.aiResponse || 'Hier erscheint die Antwort...'}}",
+                  "fontSize": "1rem",
+                  "textAlign": "LEFT",
+                  "textColor": "#2D3748",
+                  "leftColumn": 1,
+                  "rightColumn": 47,
+                  "topRow": 30,
+                  "bottomRow": 50,
+                  "widgetId": "response_text",
+                  "dynamicBindingPathList": [
+                    {"key": "text"}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

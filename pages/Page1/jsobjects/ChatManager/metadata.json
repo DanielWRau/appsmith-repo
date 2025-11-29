@@ -1,0 +1,12 @@
+{
+  "unpublishedCollection": {
+    "name": "ChatManager",
+    "pageId": "Page1",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tsendMessage: async () => {\n\t\tconst userInput = UserInput.text;\n\n\t\tif (!userInput || userInput.trim() === '') {\n\t\t\tshowAlert('Bitte geben Sie eine Frage ein', 'warning');\n\t\t\treturn;\n\t\t}\n\n\t\ttry {\n\t\t\tawait openai.run();\n\n\t\t\tif (openai.data?.choices?.[0]?.message?.content) {\n\t\t\t\tconst response = openai.data.choices[0].message.content;\n\t\t\t\tawait storeValue('aiResponse', response);\n\t\t\t\tawait resetWidget('UserInput');\n\t\t\t\tshowAlert('Antwort erhalten!', 'success');\n\t\t\t} else {\n\t\t\t\tshowAlert('Keine Antwort erhalten', 'error');\n\t\t\t}\n\t\t} catch (error) {\n\t\t\tshowAlert('Fehler: ' + error.message, 'error');\n\t\t}\n\t}\n}",
+    "variables": []
+  }
+}
